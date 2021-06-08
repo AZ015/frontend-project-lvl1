@@ -13,8 +13,8 @@ const engine = (gameQuestion, game) => {
   console.log(gameQuestion);
 
   for (let i = 0; i < TRY_COUNT; i++) {
-    const { num, expectedAnswer } = game();
-    console.log(`Question: ${num}`);
+    const { question, expectedAnswer } = game();
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question(`Your answer: `);
 
     if (!checkAnswer(answer, expectedAnswer)) {

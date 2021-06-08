@@ -1,27 +1,27 @@
 import engine from '../games/engine';
-import randomNum from '../src/cli';
+import generateRandomNum from '../src/cli';
 
-const Answers = {
+const Answer = {
     YES: 'yes',
     NO: 'no'
 };
 
-const gameQuestion = console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => {
-    return num % 2 === 0 ? Answers.YES : Answers.NO;
+    return num % 2 === 0;
 };
 
-const isEvenGame = () => {
-    const num = randomNum();
-    const expectedAnswer = isEven(num);
+const generateGameData = () => {
+    const question = generateRandomNum(1, 100);
+    const expectedAnswer = isEven(num) ? Answer.YES : Answer.NO;
 
     return {
-        num,
+        question,
         expectedAnswer
     };
 };  
 
 
 
-export default () => engine(gameQuestion, isEvenGame);
+export default () => engine(gameQuestion, generateGameData);
