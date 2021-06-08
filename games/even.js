@@ -1,7 +1,7 @@
 import engine from '../games/engine';
 import generateRandomNum from '../src/cli';
 
-const Answer = {
+const ANSWER = {
     YES: 'yes',
     NO: 'no'
 };
@@ -14,7 +14,7 @@ const isEven = (num) => {
 
 const generateGameData = () => {
     const question = generateRandomNum(1, 100);
-    const expectedAnswer = isEven(num) ? Answer.YES : Answer.NO;
+    const expectedAnswer = isEven(num) ? ANSWER.YES : ANSWER.NO;
 
     return {
         question,

@@ -1,18 +1,18 @@
 import readlineSync from 'readline-sync';
 
-const TRY_COUNT = 3;
-
 const checkAnswer = (userAnswer, expectedAnswer) => {
   return userAnswer === expectedAnswer;
 }
 
 const engine = (gameQuestion, game) => {
+  let tryCount = 3;
+
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameQuestion);
 
-  for (let i = 0; i < TRY_COUNT; i++) {
+  while(tryCount > 0) {
     const { question, expectedAnswer } = game();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question(`Your answer: `);
@@ -22,6 +22,8 @@ const engine = (gameQuestion, game) => {
       return;
     }
     console.log('Correct!');
+
+    tryCount--;
   }
   console.log(`Congratulations, ${name}!`);
 };
