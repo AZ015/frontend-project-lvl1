@@ -1,5 +1,5 @@
 import engine from '../games/engine';
-import { generateRandomNum } from '../src/cli';
+import { generateRandomNum } from '../src/utils';
 
 const PROGRESSION_LENGTH = 10;
 

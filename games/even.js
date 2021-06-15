@@ -1,5 +1,5 @@
 import engine from '../games/engine';
-import { generateRandomNum, ANSWER } from '../src/cli';
+import { generateRandomNum, ANSWER } from '../src/utils';
 
 
 const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';

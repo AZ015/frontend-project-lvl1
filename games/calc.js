@@ -1,5 +1,5 @@
 import engine from '../games/engine';
-import { generateRandomNum } from '../src/cli';
+import { generateRandomNum } from '../src/utils';
 
 const OPERATOR = {
     PLUS: '+',
@@ -9,8 +9,8 @@ const OPERATOR = {
 }
 
 const getRandomOperator = () => {
-    const keys = Object.keys(OPERATOR);
-    return OPERATOR[keys[keys.length * Math.random() << 0]];
+    const rnd = generateRandomNum(0, Object.keys(OPERATOR).length);
+    return OPERATOR[rnd];
 };
 
 const calculate = (a, b, operator) => {

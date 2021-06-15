@@ -1,5 +1,5 @@
 import engine from '../games/engine';
-import { generateRandomNum } from '../src/cli';
+import { generateRandomNum } from '../src/utils';
 
 const gameQuestion = 'Find the greatest common divisor of given numbers.';
 
