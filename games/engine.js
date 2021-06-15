@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const engine = (gameQuestion, game) => {
+export default (gameQuestion, game) => {
   let tryCount = 3;
 
   console.log('Welcome to the Brain Games!');
@@ -23,5 +23,3 @@ const engine = (gameQuestion, game) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
-export default engine;
