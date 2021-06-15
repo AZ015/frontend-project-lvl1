@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (gameQuestion, game) => {
+export default (gameQuestion, generateGame) => {
   let tryCount = 3;
 
   console.log('Welcome to the Brain Games!');
@@ -9,7 +9,7 @@ export default (gameQuestion, game) => {
   console.log(gameQuestion);
 
   while(tryCount > 0) {
-    const { question, expectedAnswer } = game();
+    const { question, expectedAnswer } = generateGame();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question(`Your answer: `);
 
