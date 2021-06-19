@@ -8,18 +8,20 @@ export default (gameQuestion, generateGame) => {
   console.log(`Hello, ${name}!`);
   console.log(gameQuestion);
 
-  while(tryCount > 0) {
+  while (tryCount > 0) {
     const { question, expectedAnswer } = generateGame();
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question(`Your answer: `);
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer !== expectedAnswer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${expectedAnswer}.\nLet's try again, ${name}!`);
+      console.log(
+        `'${answer}' is wrong answer ;(. Correct answer was ${expectedAnswer}.\nLet's try again, ${name}!`,
+      );
       return;
     }
     console.log('Correct!');
 
-    tryCount--;
+    tryCount -= 1;
   }
   console.log(`Congratulations, ${name}!`);
 };

@@ -1,8 +1,6 @@
-export const generateRandomNum = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+export const generateRandomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 export const ANSWER = {
-    YES: 'yes',
-    NO: 'no'
+  YES: 'yes',
+  NO: 'no',
 };

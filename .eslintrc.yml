@@ -1,8 +1,7 @@
 plugins:
   - babel
-parser:
-    babel-eslint
+parser: babel-eslint
 extends:
-  - 'airbnb-base'
+  - "airbnb-base"
 rules:
   no-console: 0

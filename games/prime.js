@@ -1,5 +1,5 @@
-import engine from '../games/engine';
-import { generateRandomNum, ANSWER} from '../src/utils';
+import engine from './engine';
+import { generateRandomNum, ANSWER } from '../src/utils';
 
 const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -8,7 +8,7 @@ const isPrime = (num) => {
     return false;
   }
 
-  for (let i = 2; i <= num / 2; i++) {
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -17,15 +17,13 @@ const isPrime = (num) => {
 };
 
 const generateGameData = () => {
-    const question = generateRandomNum(1, 100);
-    const expectedAnswer = isPrime(question) ? ANSWER.YES : ANSWER.NO;
+  const question = generateRandomNum(1, 100);
+  const expectedAnswer = isPrime(question) ? ANSWER.YES : ANSWER.NO;
 
-    return {
-        question,
-        expectedAnswer
-    };
-};  
-
-
+  return {
+    question,
+    expectedAnswer,
+  };
+};
 
 export default () => engine(gameQuestion, generateGameData);

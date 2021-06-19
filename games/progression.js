@@ -1,4 +1,4 @@
-import engine from '../games/engine';
+import engine from './engine';
 import { generateRandomNum } from '../src/utils';
 
 const PROGRESSION_LENGTH = 10;
@@ -7,7 +7,7 @@ const gameQuestion = 'What number is missing in the progression?';
 
 const generateProgression = (start, step, length) => {
   let progression = [];
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i += 1) {
     progression = [...progression, start + step * i];
   }
 
@@ -22,12 +22,10 @@ const generateGameData = () => {
   const expectedAnswer = `${progression.splice(hiddenElementIndex, 1, '..')}`;
   const question = progression.join(' ');
 
-    return {
-        question,
-        expectedAnswer
-    };
-};  
-
-
+  return {
+    question,
+    expectedAnswer,
+  };
+};
 
 export default () => engine(gameQuestion, generateGameData);
